@@ -54,6 +54,8 @@
 #include "usart.h"
 #include "gpio.h"
 #include "debug.h"
+#include "tcpdemo.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -82,6 +84,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MPU_Config(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -145,16 +148,19 @@ static void MPU_Config(void)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	(*(__IO uint32_t*)0xE000EF9c = 1UL<<2);
+//	(*(__IO uint32_t*)0xE000EF9c = 1UL<<2);
 	MPU_Config();
   /* USER CODE END 1 */
+
+  /* MPU Configuration--------------------------------------------------------*/
+  MPU_Config();
 
   /* Enable I-Cache---------------------------------------------------------*/
   SCB_EnableICache();
 
   /* Enable D-Cache---------------------------------------------------------*/
   SCB_EnableDCache();
-	SCB->CACR|=1<<2;
+
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -179,16 +185,13 @@ int main(void)
 	debug_printf("this is a udp test\n");
 	
   /* USER CODE END 2 */
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_14|GPIO_PIN_7, GPIO_PIN_SET);
+	tcp_server_init();
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-	
-	  MX_LWIP_Process();
-	 
-
+	MX_LWIP_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -261,6 +264,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 /* USER CODE END 4 */
+
 
 /**
   * @brief  This function is executed in case of error occurrence.

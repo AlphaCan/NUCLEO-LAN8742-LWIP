@@ -312,7 +312,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32H743xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;     ../Middlewares/Third_Party/LwIP/src/include;     ../Middlewares/Third_Party/LwIP/system;     ../Drivers/STM32H7xx_HAL_Driver/Inc;     ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;     ../Drivers/BSP/Components/lan8742;     ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;     ../Drivers/CMSIS/Device/ST/STM32H7xx/Include;     ../Middlewares/Third_Party/LwIP/src/include/lwip;     ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;     ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;     ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;     ../Middlewares/Third_Party/LwIP/src/include/netif;     ../Middlewares/Third_Party/LwIP/src/include/posix;     ../Middlewares/Third_Party/LwIP/src/include/posix/sys;     ../Middlewares/Third_Party/LwIP/system/arch;     ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;      ../Middlewares/Third_Party/LwIP/src/include;      ../Middlewares/Third_Party/LwIP/system;      ../Drivers/STM32H7xx_HAL_Driver/Inc;      ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;      ../Drivers/BSP/Components/lan8742;      ../Middlewares/Third_Party/LwIP/src/include/netif/ppp;      ../Drivers/CMSIS/Device/ST/STM32H7xx/Include;      ../Middlewares/Third_Party/LwIP/src/include/lwip;      ../Middlewares/Third_Party/LwIP/src/include/lwip/apps;      ../Middlewares/Third_Party/LwIP/src/include/lwip/priv;      ../Middlewares/Third_Party/LwIP/src/include/lwip/prot;      ../Middlewares/Third_Party/LwIP/src/include/netif;      ../Middlewares/Third_Party/LwIP/src/include/posix;      ../Middlewares/Third_Party/LwIP/src/include/posix/sys;      ../Middlewares/Third_Party/LwIP/system/arch;      ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -369,7 +369,7 @@
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile></ScatterFile>
+            <ScatterFile>LAN8742\LAN8742.sct</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -426,6 +426,16 @@
               <FileName>stm32h7xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32h7xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>tcpdemo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\tcpdemo.c</FilePath>
+            </File>
+            <File>
+              <FileName>tcpdemo.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Inc\tcpdemo.h</FilePath>
             </File>
           </Files>
         </Group>

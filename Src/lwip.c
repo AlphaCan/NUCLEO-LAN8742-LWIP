@@ -186,7 +186,7 @@ void MX_LWIP_Process(void)
   /* Handle timeouts */
   sys_check_timeouts();
 
- // Ethernet_Link_Periodic_Handle(&gnetif);
+  Ethernet_Link_Periodic_Handle(&gnetif);
 
 /* USER CODE BEGIN 4_3 */
 /* USER CODE END 4_3 */
